@@ -1,31 +1,33 @@
 ## 📥 MongoDB Queries
+
 ### This repository has a comparison between searching the database using and not using streams
 
-
 ## 🎯 Results
-```sh
-# With 100.000 registers
-# i5 11400F (6 cores, 12 threads) 16GBs of RAM
+#### With 100.000 registers
 
-npm run paginated
-Done: 16.481s
 
-npm run stream
-Done: 3.497s
-```
-
+| container | script    | cpu   | mem     | delay (s) |
+| --------- | --------- | ----- | ------- | --------- |
+| mongo     | paginated | ± 49% | ± 37%   | 16.481s   |
+| node      | paginated | ± 50% | ± 16.8% | 16.481s   |
+| mongo     | stream    | ± 5%  | ± 37%   | 3.497s    |
+| node      | stream    | ± 50% | ± 15.5% | 3.497s    |
+#### Hardware: i5 11400F (6 cores, 12 threads) 16GBs of RAM
 
 ## 💡 How it works
 
 ### Using existent data
+
 #### I've added a `mongo.zip` file inside mongo folder in the root of the project. Just extract the content in mongo folder and run the scripts.
 
-
 #
+
 ### Running Without Docker Compose
 
 #### First step is run your MongoDB locally.
+
 #### Is necessary to change the domain to `localhost` in `src/database/conn.mjs`
+
 ```sh
 docker run -d \
   --name mongodb \
@@ -37,6 +39,7 @@ docker run -d \
 ```
 
 #### If failed to connect to the database, add the user to the database which we will use in the mongo shell
+
 ```js
 use example_db
 
@@ -52,12 +55,14 @@ db.createUser(
 ```
 
 #### The second step is add test mass in your database
+
 ```sh
 # Each execution adds 50.000 new users
 npm run populate
 ```
 
 #### The last step is run the queries and compare the execution time
+
 ```sh
 # Paginated query
 npm run paginated
@@ -67,6 +72,7 @@ npm run stream
 ```
 
 #
+
 ### Running With Docker Compose
 
 #### Build the image
