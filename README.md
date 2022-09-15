@@ -1,8 +1,8 @@
-## MongoDB Queries
+## 📥 `MongoDB Queries`
 ### This repository has a comparison between searching the database using and not using streams
 
 #
-## Results
+## 🎯 `Results`
 ```sh
 # With 100.000 registers
 # i5 11400F (6 cores, 12 threads) 16GBs of RAM
@@ -15,13 +15,8 @@ Done: 3.497s
 ```
 
 #
-### Adding more test mass
-```sh
-# Each execution adds 50.000 new users
-npm run populate
-```
+## 💡 `How it works`
 
-#
 ### Running Without Docker Compose
 
 #### First step is run your MongoDB locally.
