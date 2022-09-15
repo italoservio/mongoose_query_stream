@@ -1,0 +1,27 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - ./mongo/:/data/db/
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+  node:
+    build: .
+    container_name: node-example
+    volumes:
+      - ./src/reports/:/app/src/reports/
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M

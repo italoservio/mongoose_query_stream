@@ -1,0 +1,19 @@
+{
+  "name": "query_stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "populate": "node src/scripts/populate.mjs",
+    "paginated": "node src/scripts/query_paginated.mjs",
+    "stream": "node src/scripts/query_stream.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "casual": "^1.6.2",
+    "mongoose": "^6.6.0"
+  }
+}
