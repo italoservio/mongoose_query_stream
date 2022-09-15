@@ -1,7 +1,7 @@
 ## 📥 MongoDB Queries
 ### This repository has a comparison between searching the database using and not using streams
 
-#
+
 ## 🎯 Results
 ```sh
 # With 100.000 registers
@@ -14,9 +14,15 @@ npm run stream
 Done: 3.497s
 ```
 
-#
+
 ## 💡 How it works
 
+#
+### Using existent data
+#### I've added a `mongo.zip` file inside mongo folder in the root of the project. Just extract the content in mongo folder and run the scripts.
+
+
+#
 ### Running Without Docker Compose
 
 #### First step is run your MongoDB locally.
